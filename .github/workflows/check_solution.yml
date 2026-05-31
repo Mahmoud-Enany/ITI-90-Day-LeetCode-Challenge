@@ -1,0 +1,95 @@
+name: ✅ PR Solution Checker
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'Week-**/**'
+    paths-ignore:
+      - 'Week-**/README.md'
+
+jobs:
+  check-solution:
+    name: Check Solution Format
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v40
+        with:
+          files: |
+            Week-**/**
+          files_ignore: |
+            Week-**/README.md
+
+      - name: Check file naming convention
+        run: |
+          echo "🔍 Checking file names..."
+          pattern='^[A-Za-z0-9]+_[A-Za-z0-9]+\.(c|cpp|cc|cxx|py|java|kt|kts|scala|groovy|js|mjs|jsx|ts|tsx|cs|fs|fsx|vb|go|rs|zig|nim|d|v|swift|m|mm|rb|php|lua|pl|pm|tcl|hs|ml|mli|clj|erl|ex|exs|dart|r|R|jl|pas|cr|coffee|f90|f95|adb)$'
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            filename=$(basename "$file")
+            if ! echo "$filename" | grep -qE "$pattern"; then
+              echo "❌ Invalid filename: $filename"
+              echo "   Expected format: ProblemName_YourName.ext"
+              echo "   Example: ValidParentheses_Ahmed.cpp"
+              echo "   See CONTRIBUTING.md for all supported extensions."
+              exit 1
+            fi
+            echo "✅ Valid filename: $filename"
+          done
+
+      - name: Check author header comment
+        run: |
+          echo "🔍 Checking for author header..."
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            if ! head -10 "$file" | grep -qi "author:"; then
+              echo "❌ Missing 'Author:' header in: $file"
+              echo "   Please add the standard header at the top of your file."
+              exit 1
+            fi
+            echo "✅ Header found in: $file"
+          done
+
+      - name: Check for problem link
+        run: |
+          echo "🔍 Checking for LeetCode link..."
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            if ! head -10 "$file" | grep -qi "leetcode.com"; then
+              echo "⚠️  Warning: No LeetCode link found in: $file"
+              echo "   Add '// Link: https://leetcode.com/...' to your header"
+            fi
+          done
+
+      - name: Compile C/C++ solutions
+        run: |
+          echo "🔨 Compiling C/C++ files..."
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            case "$file" in
+              *.cpp|*.cc|*.cxx|*.c)
+                echo "Compiling: $file"
+                if ! g++ -std=c++17 -Wall -o /tmp/test_solution "$file" 2>&1; then
+                  echo "❌ Compilation failed for: $file"
+                  exit 1
+                fi
+                echo "✅ Compiled successfully: $file"
+                rm -f /tmp/test_solution
+                ;;
+            esac
+          done
+
+      - name: Summary
+        run: |
+          echo ""
+          echo "🎉 All checks passed!"
+          echo "Your solution is ready for review."
+          echo ""
+          echo "📊 Files checked:"
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            echo "  - $file"
+          done

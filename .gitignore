@@ -1,0 +1,27 @@
+# Compiled files
+*.o
+*.out
+*.exe
+*.class
+*.pyc
+__pycache__/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Virtual environments
+venv/
+.env/
+node_modules/

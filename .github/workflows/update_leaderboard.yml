@@ -1,0 +1,38 @@
+name: 🏆 Update Leaderboard
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'Week-**/**'
+    paths-ignore:
+      - 'Week-**/README.md'
+  workflow_dispatch:
+
+jobs:
+  update-leaderboard:
+    name: Update Leaderboard in README
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Count solutions and update leaderboard
+        working-directory: scripts
+        run: python3 update_leaderboard.py
+
+      - name: Commit updated README
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "🤖 Auto-update leaderboard [skip ci]"
+          file_pattern: README.md

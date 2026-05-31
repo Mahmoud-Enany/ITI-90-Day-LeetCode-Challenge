@@ -1,0 +1,46 @@
+# 📅 Week 01 – STL I – Vector, Stack, Queue, Priority Queue
+
+> **Phase 2 – STL & Core Data Structures**  
+> 🎓 Teaching Session: STL containers and stack/queue patterns  
+> 💪 Practice Session: Implement & optimize
+
+---
+
+## 🗓️ Session Info
+
+| | Details |
+|--|---------|
+| 📖 Teaching | `vector`, `pair`, `stack`, `queue`, `priority_queue` — when to use each |
+| 🛠️ Practice | Live solving + optimization discussion |
+| 📺 Resource | [STL in C++ – CodeHelp](https://www.youtube.com/@CodeHelp) |
+
+---
+
+## 📝 Problems This Week
+
+| # | Problem | Difficulty | LeetCode | NeetCode |
+|---|---------|------------|----------|----------|
+| 1 | Valid Parentheses | 🟢 Easy | [Link](https://leetcode.com/problems/valid-parentheses/) | [Video](https://www.youtube.com/watch?v=WTzjTskDFMg) |
+| 2 | Min Stack | 🟡 Medium | [Link](https://leetcode.com/problems/min-stack/) | [Video](https://www.youtube.com/watch?v=qkLl7nAwDPo) |
+| 3 | Next Greater Element I | 🟢 Easy | [Link](https://leetcode.com/problems/next-greater-element-i/) | [Video](https://www.youtube.com/watch?v=sDAyOHGpCAs) |
+| 4 | Daily Temperatures | 🟡 Medium | [Link](https://leetcode.com/problems/daily-temperatures/) | [Video](https://www.youtube.com/watch?v=cTBiBSnjO3c) |
+| 5 | Evaluate Reverse Polish Notation | 🟡 Medium | [Link](https://leetcode.com/problems/evaluate-reverse-polish-notation/) | [Video](https://www.youtube.com/watch?v=OWtBzjS2oTw) |
+| 6 | Implement Queue using Stacks | 🟢 Easy | [Link](https://leetcode.com/problems/implement-queue-using-stacks/) | [Video](https://www.youtube.com/watch?v=r6En0U0bX2g) |
+| 7 | Baseball Game | 🟢 Easy | [Link](https://leetcode.com/problems/baseball-game/) | Search NeetCode |
+| 8 | Implement Stack using Queues | 🟢 Easy | [Link](https://leetcode.com/problems/implement-stack-using-queues/) | [Video](https://www.youtube.com/watch?v=wfFN3ZeO7hs) |
+| 9 | Backspace String Compare | 🟢 Easy | [Link](https://leetcode.com/problems/backspace-string-compare/) | [Video](https://www.youtube.com/watch?v=8QXGPglOehg) |
+| 10 | Remove All Adjacent Duplicates In String | 🟢 Easy | [Link](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/) | [Video](https://www.youtube.com/watch?v=DCp66P1Trtw) |
+
+---
+
+## 🏆 Best Solution of the Week
+
+> *Will be pinned after the practice session!*
+
+---
+
+## 💬 Discussion Prompts
+
+- When do you use a `stack` vs a `deque`?
+- How does monotonic stack help in Daily Temperatures?
+- What is the time complexity of `priority_queue` push/pop?
