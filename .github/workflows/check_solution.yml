@@ -26,30 +26,48 @@ jobs:
             Week-**/**
           files_ignore: |
             Week-**/README.md
+            **/.gitkeep
 
       - name: Check file naming convention
         run: |
-          echo "🔍 Checking file names..."
+          echo "Checking file names..."
           if [ -z "${{ steps.changed-files.outputs.all_changed_files }}" ]; then
             echo "No solution files changed."
             exit 0
           fi
-          pattern='^[A-Za-z0-9_]+_[A-Za-z0-9]+\.(c|cpp|cc|cxx|py|java|kt|kts|scala|groovy|js|mjs|jsx|ts|tsx|cs|fs|fsx|vb|go|rs|zig|nim|d|v|swift|m|mm|rb|php|lua|pl|pm|tcl|hs|ml|mli|clj|erl|ex|exs|dart|r|R|jl|pas|cr|coffee|f90|f95|adb)$'
+          # YourName.ext inside Week-XX/NN-Problem Name/
+          pattern='^[A-Za-z][A-Za-z0-9_-]*\.(c|cpp|cc|cxx|py|java|kt|kts|scala|groovy|js|mjs|jsx|ts|tsx|cs|fs|fsx|vb|go|rs|zig|nim|d|v|swift|m|mm|rb|php|lua|pl|pm|tcl|hs|ml|mli|clj|erl|ex|exs|dart|r|R|jl|pas|cr|coffee|f90|f95|adb)$'
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            case "$file" in
+              Week-*/[0-9][0-9]-*/*) ;;
+              *)
+                echo "Skipping non-solution path: $file"
+                continue
+                ;;
+            esac
             filename=$(basename "$file")
+            if [ "$filename" = ".gitkeep" ]; then
+              continue
+            fi
             if ! echo "$filename" | grep -qE "$pattern"; then
-              echo "❌ Invalid filename: $filename"
+              echo "Invalid filename: $filename"
+              echo "Expected: YourName.ext inside Week-XX/NN-Problem Name/ (e.g. Ashraf.cpp)"
               exit 1
             fi
-            echo "✅ Valid filename: $filename"
+            echo "Valid filename: $filename"
           done
 
       - name: Check author header comment
         run: |
           if [ -z "${{ steps.changed-files.outputs.all_changed_files }}" ]; then exit 0; fi
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            case "$file" in
+              Week-*/[0-9][0-9]-*/*) ;;
+              *) continue ;;
+            esac
+            [ "$(basename "$file")" = ".gitkeep" ] && continue
             if ! head -10 "$file" | grep -qi "author:"; then
-              echo "❌ Missing 'Author:' header in: $file"
+              echo "Missing 'Author:' header in: $file"
               exit 1
             fi
           done
@@ -59,7 +77,7 @@ jobs:
           if [ -z "${{ steps.changed-files.outputs.all_changed_files }}" ]; then exit 0; fi
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             case "$file" in
-              *.cpp|*.cc|*.cxx|*.c)
+              Week-*/[0-9][0-9]-*/*.cpp|Week-*/[0-9][0-9]-*/*.cc|Week-*/[0-9][0-9]-*/*.cxx|Week-*/[0-9][0-9]-*/*.c)
                 {
                   echo '#include <string>'
                   echo 'using namespace std;'
