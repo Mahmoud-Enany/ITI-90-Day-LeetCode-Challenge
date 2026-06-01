@@ -1,7 +1,7 @@
 # 📅 Week 04 – STL Review & Mini Contest 🏆
 
 > **Phase 2 – STL & Core Data Structures**  
-> 🏆 Contest Week — mixed problems from Weeks 01–03
+> 🎓 Teaching Session + 💪 Practice Session
 
 ---
 
@@ -10,27 +10,64 @@
 | | Details |
 |--|---------|
 | 📖 Topic | STL recap: vectors, stacks, queues, maps, linked lists |
-| 🛠️ Practice | Timed mini contest (pick any 10 from below or instructor set) |
+| 🛠️ Practice | Timed mini contest — mixed problems from Weeks 01–03 |
 | 📺 Resource | [Complete C++ STL in 1 Video – take U forward](https://www.youtube.com/@takeUforward) |
 
 ---
 
 ## 📝 Problems This Week
-
 Pick **10 problems** from Weeks 01–03 you have not solved yet, or use this suggested mix:
 
+### 📅 Day 1
 | # | Problem | Difficulty | LeetCode |
 |---|---------|------------|----------|
-| 1 | Valid Parentheses | 🟢 Easy | [Link](https://leetcode.com/problems/valid-parentheses/) |
-| 2 | Daily Temperatures | 🟡 Medium | [Link](https://leetcode.com/problems/daily-temperatures/) |
-| 3 | Group Anagrams | 🟡 Medium | [Link](https://leetcode.com/problems/group-anagrams/) |
-| 4 | Top K Frequent Elements | 🟡 Medium | [Link](https://leetcode.com/problems/top-k-frequent-elements/) |
-| 5 | Reverse Linked List | 🟢 Easy | [Link](https://leetcode.com/problems/reverse-linked-list/) |
-| 6 | Merge Two Sorted Lists | 🟢 Easy | [Link](https://leetcode.com/problems/merge-two-sorted-lists/) |
-| 7 | Reorder List | 🟡 Medium | [Link](https://leetcode.com/problems/reorder-list/) |
-| 8 | Subarray Sum Equals K | 🟡 Medium | [Link](https://leetcode.com/problems/subarray-sum-equals-k/) |
-| 9 | Min Stack | 🟡 Medium | [Link](https://leetcode.com/problems/min-stack/) |
-| 10 | Copy List with Random Pointer | 🟡 Medium | [Link](https://leetcode.com/problems/copy-list-with-random-pointer/) |
+| 01 | [Valid Parentheses](./01-Valid Parentheses/) | 🟢 Easy | [Link](https://leetcode.com/problems/valid-parentheses/) |
+| 02 | [Daily Temperatures](./02-Daily Temperatures/) | 🟡 Medium | [Link](https://leetcode.com/problems/daily-temperatures/) |
+
+---
+
+### 📅 Day 2
+| # | Problem | Difficulty | LeetCode |
+|---|---------|------------|----------|
+| 03 | [Group Anagrams](./03-Group Anagrams/) | 🟡 Medium | [Link](https://leetcode.com/problems/group-anagrams/) |
+| 04 | [Top K Frequent Elements](./04-Top K Frequent Elements/) | 🟡 Medium | [Link](https://leetcode.com/problems/top-k-frequent-elements/) |
+
+---
+
+### 📅 Day 3
+| # | Problem | Difficulty | LeetCode |
+|---|---------|------------|----------|
+| 05 | [Reverse Linked List](./05-Reverse Linked List/) | 🟢 Easy | [Link](https://leetcode.com/problems/reverse-linked-list/) |
+| 06 | [Merge Two Sorted Lists](./06-Merge Two Sorted Lists/) | 🟢 Easy | [Link](https://leetcode.com/problems/merge-two-sorted-lists/) |
+
+---
+
+### 📅 Day 4
+| # | Problem | Difficulty | LeetCode |
+|---|---------|------------|----------|
+| 07 | [Reorder List](./07-Reorder List/) | 🟡 Medium | [Link](https://leetcode.com/problems/reorder-list/) |
+| 08 | [Subarray Sum Equals K](./08-Subarray Sum Equals K/) | 🟡 Medium | [Link](https://leetcode.com/problems/subarray-sum-equals-k/) |
+
+---
+
+### 📅 Day 5
+| # | Problem | Difficulty | LeetCode |
+|---|---------|------------|----------|
+| 09 | [Min Stack](./09-Min Stack/) | 🟡 Medium | [Link](https://leetcode.com/problems/min-stack/) |
+
+---
+
+### 📅 Day 6
+| # | Problem | Difficulty | LeetCode |
+|---|---------|------------|----------|
+| 10 | [Copy List with Random Pointer](./10-Copy List with Random Pointer/) | 🟡 Medium | [Link](https://leetcode.com/problems/copy-list-with-random-pointer/) |
+
+---
+
+### 🏁 Day 7
+| Task |
+|------|
+| Practice Session |
 
 ---
 

@@ -32,8 +32,9 @@ This repo powers the **ITI 90-Day LeetCode Challenge (Intake 46)** for ITI train
 **Assumed background:** You are comfortable with arrays, strings, sorting, and basic binary search from earlier coursework. We begin with **STL containers** in Week 01.
 
 **The Rules are simple:**
-- Pick any problem from the current week's folder
-- Solve it in **any language** (C++, Python, Java, C#, Kotlin, Rust, Go, … — see [CONTRIBUTING.md](./CONTRIBUTING.md))
+- Follow the **daily schedule** in the current week’s `README.md` (Day 1–6 problems + Day 7 practice)
+- Open the problem folder (e.g. `Week-01/01-Baseball Game/`) and add your file: `YourName.ext`
+- Solve in **any language** (C++, Python, Java, C#, Kotlin, Rust, Go, … — see [CONTRIBUTING.md](./CONTRIBUTING.md))
 - Submit your solution following the [contribution guide](#-how-to-contribute)
 - Show up to the **weekly sessions** and bring your best approach 🔥
 
@@ -91,9 +92,9 @@ This repo powers the **ITI 90-Day LeetCode Challenge (Intake 46)** for ITI train
 ### Quick Steps
 
 1. **Fork** the repo
-2. Go to the folder of the current week (e.g., `Week-01/`)
-3. Create your file: `<ProblemName>_<YourName>.<ext>`
-   - Example: `ValidParentheses_Ahmed.cpp`, `DailyTemperatures_Sara.py`, `TwoSum_Mona.cs`
+2. Open the **problem folder** for today (e.g. `Week-01/03-Valid Parentheses/`)
+3. Add your solution as **`YourName.ext`** (same person, multiple languages = multiple files)
+   - Examples: `Ashraf.cpp`, `Mamdouh.py`, `Sara.cs` inside `Week-01/01-Baseball Game/`
 4. Add this header comment at the top:
 ```cpp
 // Author: <Your Name>
@@ -102,7 +103,7 @@ This repo powers the **ITI 90-Day LeetCode Challenge (Intake 46)** for ITI train
 // Approach: <one line summary>
 // Time: O(??) | Space: O(??)
 ```
-5. Open a **Pull Request** with title: `[Week-XX] ProblemName - YourName`
+5. Open a **Pull Request** with title: `[Week-XX] Problem Name - YourName`
 
 📖 Full guide: [CONTRIBUTING.md](./CONTRIBUTING.md)
 
