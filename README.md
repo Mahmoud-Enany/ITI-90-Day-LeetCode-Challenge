@@ -143,31 +143,37 @@ This is where the real learning happens! 🧠
     <td align="center">
       <a href="https://github.com/Ashraf3x">
         <img src="https://github.com/Ashraf3x.png?size=85" width="85" height="85" style="border-radius: 50%;" alt="Ashraf3x"/><br />
-        <sub><b>Ashraf3x</b></sub>
+        <sub><b>Ahmed Ashraf</b></sub>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/ahmedmamdouh32">
         <img src="https://github.com/ahmedmamdouh32.png?size=85" width="85" height="85" style="border-radius: 50%;" alt="ahmedmamdouh32"/><br />
-        <sub><b>ahmedmamdouh32</b></sub>
+        <sub><b>Ahmed Mamdouh</b></sub>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/Assemom">
         <img src="https://github.com/Assemom.png?size=85" width="85" height="85" style="border-radius: 50%;" alt="Assemom"/><br />
-        <sub><b>Assemom</b></sub>
+        <sub><b>Assem</b></sub>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/muhmedsaeed">
         <img src="https://github.com/muhmedsaeed.png?size=85" width="85" height="85" style="border-radius: 50%;" alt="muhmedsaeed"/><br />
-        <sub><b>muhmedsaeed</b></sub>
+        <sub><b>Muhmed saeed</b></sub>
       </a>
     </td>
        <td align="center">
       <a href="https://github.com/youssefrramdan">
         <img src="https://github.com/youssefrramdan.png?size=85" width="85" height="85" style="border-radius: 50%;" alt="youssefrramdan"/><br />
         <sub><b>Youssef Ramadan</b></sub>
+      </a>
+    </td>
+        <td align="center">
+      <a href="https://github.com/Mahmoud-Enany">
+        <img src="https://github.com/Mahmoud-Enany.png?size=85" width="85" height="85" style="border-radius: 50%;" alt="Mahmoud-Enany"/><br />
+        <sub><b>Mahmoud Enany</b></sub>
       </a>
     </td>
   </tr>
