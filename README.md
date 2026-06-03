@@ -69,7 +69,7 @@ This repo powers the **ITI 90-Day LeetCode Challenge (Intake 46)** for ITI train
 | Rank | ✨ Participant | 📈 Problems Solved | Status |
 | :---: | :--- | :---: | :---: |
 | 1 | **Shalaby** | 10 | 🏆 |
-| 2 | **Ashraf** | 6 | 🥈 |
+| 2 | **Ashraf** | 7 | 🥈 |
 | 3 | **Assem** | 6 | 🥉 |
 | 4 | **Mohamedsaeed** | 6 | 🔥 |
 | 5 | **Hend** | 4 | 🔥 |
