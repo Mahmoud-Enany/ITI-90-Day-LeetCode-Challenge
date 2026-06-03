@@ -5,7 +5,7 @@
 class Solution {
 public
     bool isValid(string s) {
-        stackchar st;
+        stack<char> st;
         for (auto it  s) {
             if (!st.empty() && ((st.top() == '(' && it == ')') 
                                 (st.top() == '[' && it == ']') 
