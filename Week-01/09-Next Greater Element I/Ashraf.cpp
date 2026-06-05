@@ -1,6 +1,6 @@
 // Author: Ashraf
 // Link: https://leetcode.com/problems/next-greater-element-i/description/
-// Time Complexity: O(n + m)
+// Time Complexity: O(n)
 // Space Complexity: O(n)
 class Solution {
 public:
@@ -13,10 +13,6 @@ public:
                 st.pop();
             }
             st.push(it);
-        }
-        while(!st.empty()){
-             nxt[st.top()] = -1;
-             st.pop();
         }
         vector<int>ans;
         for(auto it: nums1 ){
