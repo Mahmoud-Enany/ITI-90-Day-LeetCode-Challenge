@@ -23,7 +23,6 @@ def is_solution_file(filename: str) -> bool:
 
 
 def author_from_filename(filename: str) -> str | None:
-    """YourName.ext inside a problem folder."""
     stem = os.path.splitext(filename)[0]
     if not stem or "_" in stem:
         return None
@@ -31,7 +30,6 @@ def author_from_filename(filename: str) -> str | None:
 
 
 def author_from_legacy(filename: str) -> tuple[str, str] | None:
-    """ProblemName_Author.ext at week root (backward compatible)."""
     stem = os.path.splitext(filename)[0]
     parts = stem.split("_")
     if len(parts) < 2:
@@ -42,9 +40,7 @@ def author_from_legacy(filename: str) -> tuple[str, str] | None:
 
 
 def main():
-    # author -> set of (week, problem_id) — unique problems count
     solved: dict[str, set] = {}
-    # author -> total file count (all languages)
     file_counts: dict[str, int] = {}
 
     weeks_with_solutions: set[str] = set()
@@ -86,7 +82,6 @@ def main():
         if week_has_solutions:
             weeks_with_solutions.add(week)
 
-    # ── Stats ──────────────────────────────────────────────────────────────
     weeks_active = len(weeks_with_solutions)
     active_contributors = len(solved)
 
@@ -96,31 +91,31 @@ def main():
         f"| {weeks_active} / {TOTAL_WEEKS} | {total_solution_files} | {active_contributors} |\n"
     )
 
-    # ── Leaderboard table ──────────────────────────────────────────────────
-    # Sort by unique problems solved, then by total files as tiebreaker
-    sorted_users = sorted(
-        solved.keys(),
-        key=lambda a: (len(solved[a]), file_counts.get(a, 0)),
-        reverse=True,
-    )
-
     rank_medals = {1: "🥇", 2: "🥈", 3: "🥉"}
 
-    table_content = "\n| Rank | Participant | Problems Solved | Total Solutions |\n"
+    all_participants = set(solved.keys()) | set(file_counts.keys())
+
+    sorted_users = sorted(
+        all_participants,
+        key=lambda author: (len(solved.get(author, [])), file_counts.get(author, 0)),
+        reverse=True
+    )
+
+    table_content = "\n| Rank | Participant | Problems Solved | Total Solutions (Including Multi-language) |\n"
     table_content += "| :---: | :---: | :---: | :---: |\n"
 
     for rank, author in enumerate(sorted_users, 1):
         rank_label = rank_medals.get(rank, f"`{rank}`")
-        problems = len(solved[author])
+        problems = len(solved.get(author, []))
         files = file_counts.get(author, 0)
-        # Show bonus indicator if they submitted more files than problems
-        files_display = f"{files} 🌐" if files > problems else str(files)
+        
+        files_display = f"{files}"
+        
         table_content += f"| {rank_label} | **{author}** | {problems} | {files_display} |\n"
 
     if not sorted_users:
         table_content += "| - | No solutions merged yet | 0 | 0 |\n"
 
-    # ── Write to README ────────────────────────────────────────────────────
     readme_path = "README.md"
     if not os.path.exists(readme_path):
         print("README.md not found!")
@@ -129,7 +124,6 @@ def main():
     with open(readme_path, "r", encoding="utf-8") as f:
         content = f.read()
 
-    # Replace stats block
     if "<!-- STATS_START -->" in content and "<!-- STATS_END -->" in content:
         stats_pattern = r"(<!-- STATS_START -->).*?(<!-- STATS_END -->)"
         content = re.sub(
@@ -142,7 +136,6 @@ def main():
     else:
         print("Warning: STATS markers not found in README.md — skipping stats update.")
 
-    # Replace leaderboard block
     if "<!-- LEADERBOARD_START -->" in content and "<!-- LEADERBOARD_END -->" in content:
         lb_pattern = r"(<!-- LEADERBOARD_START -->).*?(<!-- LEADERBOARD_END -->)"
         content = re.sub(

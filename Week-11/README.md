@@ -72,3 +72,5 @@
 ## 🏆 Best Solution of the Week
 
 > *Will be pinned after the practice session!*
+
+---
