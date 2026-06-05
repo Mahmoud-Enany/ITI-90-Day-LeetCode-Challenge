@@ -75,7 +75,7 @@
 ---
 
 ### 📅 Day 9 ⚡ TODAY
-> 👇 **This is today's challenge — let's go! 🚀**
+👇 **This is today's challenge — let's go! 🚀**
 | # | Problem | Difficulty | LeetCode | NeetCode |
 |---|---------|------------|----------|----------|
 | 09 | Next Greater Element I | 🟢 Easy | [Link](https://leetcode.com/problems/next-greater-element-i/) | [Video](https://www.youtube.com/watch?v=sDAyOHGpCAs) |
