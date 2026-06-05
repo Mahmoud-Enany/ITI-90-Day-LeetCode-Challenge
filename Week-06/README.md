@@ -72,10 +72,3 @@
 ## 🏆 Best Solution of the Week
 
 > *Will be pinned after the practice session!*
-
----
-
-## 💬 Discussion Prompts
-
-- When can greedy fail? Give an example.
-- Why does sorting by end time work for interval problems?

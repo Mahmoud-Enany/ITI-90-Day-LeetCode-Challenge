@@ -72,10 +72,3 @@
 ## 🏆 Best Solution of the Week
 
 > *Will be pinned after the practice session!*
-
----
-
-## 💬 Discussion Prompts
-
-- How do you pick the root from preorder + inorder indices?
-- BST validation: inorder vs min/max bounds approach?

@@ -72,10 +72,3 @@
 ## 🏆 Best Solution of the Week
 
 > *Will be pinned after the practice session!*
-
----
-
-## 💬 Discussion Prompts
-
-- Why does `x & (x-1)` remove the lowest set bit?
-- XOR properties used in Single Number and Missing Number?

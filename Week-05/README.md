@@ -72,10 +72,3 @@
 ## 🏆 Best Solution of the Week
 
 > *Will be pinned after the practice session!*
-
----
-
-## 💬 Discussion Prompts
-
-- Fixed vs variable window — how do you decide?
-- Two pointers moving toward each other vs same direction?

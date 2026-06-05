@@ -72,10 +72,3 @@
 ## 🏆 Best Solution of the Week
 
 > *Will be pinned after the practice session!*
-
----
-
-## 💬 Discussion Prompts
-
-- Iterative vs recursive reversal — which do you prefer?
-- How does the slow/fast pointer find the middle and detect cycles?

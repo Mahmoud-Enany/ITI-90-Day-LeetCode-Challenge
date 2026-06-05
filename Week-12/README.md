@@ -72,10 +72,3 @@
 ## 🏆 Best Solution of the Week
 
 > *Will be pinned after the practice session!*
-
----
-
-## 💬 Discussion Prompts
-
-- Iterative vs recursive DFS — stack simulation?
-- When is BFS preferable to DFS on trees?

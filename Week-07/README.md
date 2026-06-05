@@ -72,10 +72,3 @@
 ## 🏆 Best Solution of the Week
 
 > *Will be pinned after the practice session!*
-
----
-
-## 💬 Discussion Prompts
-
-- Prefix sum + hash map: what invariant are you tracking?
-- How does 2D prefix sum answer Matrix Block Sum?

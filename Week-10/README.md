@@ -72,10 +72,3 @@
 ## 🏆 Best Solution of the Week
 
 > *Will be pinned after the practice session!*
-
----
-
-## 💬 Discussion Prompts
-
-- What is your prune condition in Word Search?
-- N-Queens: how do you check diagonals efficiently?

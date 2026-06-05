@@ -72,10 +72,3 @@
 ## 🏆 Best Solution of the Week
 
 > *Will be pinned after the practice session!*
-
----
-
-## 💬 Discussion Prompts
-
-- Draw the recursion tree for Subsets on `[1,2,3]`.
-- What is the difference between subsets and permutations state?
