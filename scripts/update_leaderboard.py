@@ -124,8 +124,8 @@ def main():
     with open(readme_path, "r", encoding="utf-8") as f:
         content = f.read()
 
-    if "" in content and "" in content:
-        stats_pattern = r"().*?()"
+    if "<!-- STATS_START -->" in content and "<!-- STATS_END -->" in content:
+        stats_pattern = r"(<!-- STATS_START -->).*?(<!-- STATS_END -->)"
         content = re.sub(
             stats_pattern,
             f"\\1\n{stats_content}\n\\2",
@@ -136,8 +136,8 @@ def main():
     else:
         print("Warning: STATS markers not found in README.md — skipping stats update.")
 
-    if "" in content and "" in content:
-        lb_pattern = r"().*?()"
+    if "<!-- LEADERBOARD_START -->" in content and "<!-- LEADERBOARD_END -->" in content:
+        lb_pattern = r"(<!-- LEADERBOARD_START -->).*?(<!-- LEADERBOARD_END -->)"
         content = re.sub(
             lb_pattern,
             f"\\1\n{table_content}\n\\2",
