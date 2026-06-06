@@ -74,8 +74,3 @@
 > *Will be pinned after the practice session!*
 
 ---
-
-## 💬 Discussion Prompts
-
-- What makes an answer space "monotonic" for binary search on answer?
-- Template: `while (lo < hi)` — when do you use `mid` vs `mid+1`?

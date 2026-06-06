@@ -76,8 +76,3 @@ Pick **10 problems** from Weeks 01–03 you have not solved yet, or use this sug
 > *Contest winners pinned after the session!*
 
 ---
-
-## 💬 Discussion Prompts
-
-- Which STL container saved you the most time this month?
-- What pattern appeared in more than one problem during the contest?

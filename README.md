@@ -16,10 +16,9 @@
 ## 📋 Table of Contents
 
 - [About](#-about)
-- [How to Contribute](#-how-to-contribute)
-- [Weekly Schedule](#-weekly-schedule)
 - [Leaderboard](#-leaderboard)
-- [Badges](#-badges)
+- [Weekly Schedule](#-weekly-schedule)
+- [How to Contribute](#-how-to-contribute)
 - [Resources](#-resources)
 - [Contributors](#-contributors)
 
@@ -32,7 +31,7 @@ This repo powers the **ITI 90-Day LeetCode Challenge (Intake 46)** for ITI train
 **Assumed background:** You are comfortable with arrays, strings, sorting, and basic binary search from earlier coursework. We begin with **STL containers** in Week 01.
 
 **The Rules are simple:**
-- Follow the **daily schedule** in the current week’s `README.md` (Day 1–6 problems + Day 7 practice)
+- Follow the **daily schedule** in the current week's `README.md` (Day 1–6 problems + Day 7 practice)
 - Open the problem folder (e.g. `Week-01/01-Baseball Game/`) and add your file: `YourName.ext`
 - Solve in **any language** (C++, Python, Java, C#, Kotlin, Rust, Go, … — see [CONTRIBUTING.md](./CONTRIBUTING.md))
 - Submit your solution following the [contribution guide](#-how-to-contribute)
@@ -40,55 +39,57 @@ This repo powers the **ITI 90-Day LeetCode Challenge (Intake 46)** for ITI train
 
 ---
 
-## 📁 Weekly Schedule
-
-| Week | Topic | Phase | Problems | Session |
-|------|-------|-------|----------|---------|
-| [Week 01](./Week-01/README.md) | STL I – Stack, Queue, Priority Queue | Phase 2 – STL & DS | 10 | 🎓 Teaching + 💪 Practice |
-| [Week 02](./Week-02/README.md) | STL II – Set, Map, Unordered | Phase 2 – STL & DS | 10 | 🎓 Teaching + 💪 Practice |
-| [Week 03](./Week-03/README.md) | Linked Lists | Phase 2 – STL & DS | 10 | 🎓 Teaching + 💪 Practice |
-| [Week 04](./Week-04/README.md) | STL Review & Mini Contest | Phase 2 – STL & DS | 10 | 🏆 Contest Week |
-| [Week 05](./Week-05/README.md) | Sliding Window & Two Pointers | Phase 3 – Patterns | 10 | 🎓 Teaching + 💪 Practice |
-| [Week 06](./Week-06/README.md) | Greedy Algorithms | Phase 3 – Patterns | 10 | 🎓 Teaching + 💪 Practice |
-| [Week 07](./Week-07/README.md) | Prefix Sum & Difference Array | Phase 3 – Patterns | 10 | 🎓 Teaching + 💪 Practice |
-| [Week 08](./Week-08/README.md) | Binary Search on Answer | Phase 3 – Patterns | 10 | 🎓 Teaching + 💪 Practice |
-| [Week 09](./Week-09/README.md) | Recursion Basics | Phase 4 – Recursion | 10 | 🎓 Teaching + 💪 Practice |
-| [Week 10](./Week-10/README.md) | Backtracking | Phase 4 – Recursion | 10 | 🎓 Teaching + 💪 Practice |
-| [Week 11](./Week-11/README.md) | Bit Manipulation & Math Tricks | Phase 4 – Recursion | 10 | 🎓 Teaching + 💪 Practice |
-| [Week 12](./Week-12/README.md) | Binary Trees I – DFS/BFS | Phase 5 – Trees | 10 | 🎓 Teaching + 💪 Practice |
-| [Week 13](./Week-13/README.md) | Binary Trees II – LCA & Construction | Phase 5 – Trees | 10 | 🎓 Teaching + 💪 Practice |
-
----
-
 ## 🏆 Leaderboard
 
-> Updated automatically every week!
+<div align="center">
+
+> 🔄 Updated automatically every week
+
+<!-- STATS_START -->
+
+| 📅 Weeks Active | 🧩 Total Solutions | 👥 Active Contributors |
+| :---: | :---: | :---: |
+| 1 / 13 | 62 | 9 |
+
+<!-- STATS_END -->
 
 <!-- LEADERBOARD_START -->
 
-| Rank | ✨ Participant | 📈 Problems Solved | Status |
-| :---: | :--- | :---: | :---: |
-| 1 | **Mohamedsaeed** | 5 | 🏆 |
-| 2 | **Assem** | 4 | 🥈 |
-| 3 | **Ashraf** | 3 | 🥉 |
-| 4 | **Mamdouh** | 3 | 🔥 |
-| 5 | **Youssef** | 2 | 🔥 |
-| 6 | **Mahmoudenany** | 2 | 🔥 |
+| Rank | Participant | Problems Solved | Total Solutions (Including Multi-language) |
+| :---: | :---: | :---: | :---: |
+| 🥇 | **Ashraf** | 10 | 13 |
+| 🥈 | **Mohamedsaeed** | 10 | 10 |
+| 🥉 | **Shalaby** | 10 | 10 |
+| `4` | **Assem** | 9 | 10 |
+| `5` | **Mamdouh** | 9 | 9 |
+| `6` | **Hend** | 4 | 4 |
+| `7` | **Mahmoudenany** | 3 | 3 |
+| `8` | **Youssef** | 2 | 2 |
+| `9` | **Kareem** | 1 | 1 |
 
 <!-- LEADERBOARD_END -->
 
+</div>
+
 ---
 
-## 🏅 Badges
+## 📁 Weekly Schedule
 
-| Badge | Description | How to Earn |
-|-------|-------------|-------------|
-| 🌱 **Beginner** | Got started! | Submit your first solution |
-| ⚡ **Week Warrior** | Consistent solver | Solve 5+ problems in one week |
-| 🔥 **On Fire** | Weekly champion | Most solutions in a single week |
-| 🧠 **Big Brain** | Best solution | Pinned as best solution of the week |
-| 🎯 **Sharp Shooter** | Multi-language | Solve same problem in 2+ languages |
-| 👑 **ITI Legend** | Course champion | Top contributor at end of 13 weeks |
+| Week | Topic | Phase | Problems | Session |
+|------|-------|-------|----------|---------| 
+| [Week 01](./Week-01/README.md) | STL I – Stack, Queue, Priority Queue | Phase 2 – STL & DS | 10 | Teaching + Practice |
+| [Week 02](./Week-02/README.md) | STL II – Set, Map, Unordered | Phase 2 – STL & DS | 10 | Teaching + Practice |
+| [Week 03](./Week-03/README.md) | Linked Lists | Phase 2 – STL & DS | 10 | Teaching + Practice |
+| [Week 04](./Week-04/README.md) | STL Review & Mini Contest | Phase 2 – STL & DS | 10 | 🏆 Contest Week |
+| [Week 05](./Week-05/README.md) | Sliding Window & Two Pointers | Phase 3 – Patterns | 10 | Teaching + Practice |
+| [Week 06](./Week-06/README.md) | Greedy Algorithms | Phase 3 – Patterns | 10 | Teaching + Practice |
+| [Week 07](./Week-07/README.md) | Prefix Sum & Difference Array | Phase 3 – Patterns | 10 | Teaching + Practice |
+| [Week 08](./Week-08/README.md) | Binary Search on Answer | Phase 3 – Patterns | 10 | Teaching + Practice |
+| [Week 09](./Week-09/README.md) | Recursion Basics | Phase 4 – Recursion | 10 | Teaching + Practice |
+| [Week 10](./Week-10/README.md) | Backtracking | Phase 4 – Recursion | 10 | Teaching + Practice |
+| [Week 11](./Week-11/README.md) | Bit Manipulation & Math Tricks | Phase 4 – Recursion | 10 | Teaching + Practice |
+| [Week 12](./Week-12/README.md) | Binary Trees I – DFS/BFS | Phase 5 – Trees | 10 | Teaching + Practice |
+| [Week 13](./Week-13/README.md) | Binary Trees II – LCA & Construction | Phase 5 – Trees | 10 | Teaching + Practice |
 
 ---
 
@@ -124,6 +125,7 @@ This repo powers the **ITI 90-Day LeetCode Challenge (Intake 46)** for ITI train
 | 📺 Aditya Verma (Binary Search) | [YouTube](https://www.youtube.com/@AdityaVermaTheYoutubeGod) |
 | 📺 Back To Back SWE (Backtracking) | [YouTube](https://www.youtube.com/@BackToBackSWE) |
 | 📺 William Fiset (Graphs – later topics) | [YouTube](https://www.youtube.com/@WilliamFiset) |
+
 ---
 
 ## 💬 Daily Discussion
@@ -162,19 +164,37 @@ This is where the real learning happens! 🧠
     <td align="center">
       <a href="https://github.com/muhmedsaeed">
         <img src="https://github.com/muhmedsaeed.png?size=85" width="85" height="85" style="border-radius: 50%;" alt="muhmedsaeed"/><br />
-        <sub><b>Muhmed saeed</b></sub>
+        <sub><b>Muhmed Saeed</b></sub>
       </a>
     </td>
-       <td align="center">
+    <td align="center">
       <a href="https://github.com/youssefrramdan">
         <img src="https://github.com/youssefrramdan.png?size=85" width="85" height="85" style="border-radius: 50%;" alt="youssefrramdan"/><br />
         <sub><b>Youssef Ramadan</b></sub>
       </a>
     </td>
-        <td align="center">
+    <td align="center">
       <a href="https://github.com/Mahmoud-Enany">
         <img src="https://github.com/Mahmoud-Enany.png?size=85" width="85" height="85" style="border-radius: 50%;" alt="Mahmoud-Enany"/><br />
         <sub><b>Mahmoud Enany</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/Kareem-Mohamed0">
+        <img src="https://github.com/Kareem-Mohamed0.png?size=85" width="85" height="85" style="border-radius: 50%;" alt="Kareem-Mohamed0"/><br />
+        <sub><b>Kareem Mohamed</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/ahmedshalaby03">
+        <img src="https://github.com/ahmedshalaby03.png?size=85" width="85" height="85" style="border-radius: 50%;" alt="ahmedshalaby03"/><br />
+        <sub><b>Ahmed Shalaby</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/hend2532">
+        <img src="https://github.com/hend2532.png?size=85" width="85" height="85" style="border-radius: 50%;" alt="hend2532"/><br />
+        <sub><b>Hend Hany</b></sub>
       </a>
     </td>
   </tr>

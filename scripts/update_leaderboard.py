@@ -12,6 +12,8 @@ SOLUTION_EXTENSIONS = {
     ".f90", ".f95", ".adb",
 }
 
+TOTAL_WEEKS = 13
+
 
 def is_solution_file(filename: str) -> bool:
     if filename.startswith(".") or filename.lower() in SKIP_NAMES:
@@ -21,7 +23,6 @@ def is_solution_file(filename: str) -> bool:
 
 
 def author_from_filename(filename: str) -> str | None:
-    """YourName.ext inside a problem folder."""
     stem = os.path.splitext(filename)[0]
     if not stem or "_" in stem:
         return None
@@ -29,7 +30,6 @@ def author_from_filename(filename: str) -> str | None:
 
 
 def author_from_legacy(filename: str) -> tuple[str, str] | None:
-    """ProblemName_Author.ext at week root (backward compatible)."""
     stem = os.path.splitext(filename)[0]
     parts = stem.split("_")
     if len(parts) < 2:
@@ -40,8 +40,11 @@ def author_from_legacy(filename: str) -> tuple[str, str] | None:
 
 
 def main():
-    # author -> set of (week, problem_id) — one count per problem, not per language
-    solved = {}
+    solved: dict[str, set] = {}
+    file_counts: dict[str, int] = {}
+
+    weeks_with_solutions: set[str] = set()
+    total_solution_files = 0
 
     week_folders = sorted(
         d for d in os.listdir(".") if os.path.isdir(d) and d.startswith("Week-")
@@ -49,6 +52,7 @@ def main():
 
     for week in week_folders:
         week_path = os.path.join(".", week)
+        week_has_solutions = False
 
         for entry in os.listdir(week_path):
             entry_path = os.path.join(week_path, entry)
@@ -61,6 +65,9 @@ def main():
                     if not author:
                         continue
                     solved.setdefault(author, set()).add((week, entry))
+                    file_counts[author] = file_counts.get(author, 0) + 1
+                    week_has_solutions = True
+                    total_solution_files += 1
                 continue
 
             if os.path.isfile(entry_path) and is_solution_file(entry):
@@ -68,19 +75,46 @@ def main():
                 if legacy:
                     author, problem = legacy
                     solved.setdefault(author, set()).add((week, problem))
+                    file_counts[author] = file_counts.get(author, 0) + 1
+                    week_has_solutions = True
+                    total_solution_files += 1
 
-    user_counts = {author: len(problems) for author, problems in solved.items()}
-    sorted_users = sorted(user_counts.items(), key=lambda x: x[1], reverse=True)
+        if week_has_solutions:
+            weeks_with_solutions.add(week)
 
-    table_content = "\n| Rank | ✨ Participant | 📈 Problems Solved | Status |\n"
-    table_content += "| :---: | :--- | :---: | :---: |\n"
+    weeks_active = len(weeks_with_solutions)
+    active_contributors = len(solved)
 
-    for rank, (user, count) in enumerate(sorted_users, 1):
-        emoji = "🏆" if rank == 1 else "🥈" if rank == 2 else "🥉" if rank == 3 else "🔥"
-        table_content += f"| {rank} | **{user}** | {count} | {emoji} |\n"
+    stats_content = (
+        f"\n| 📅 Weeks Active | 🧩 Total Solutions | 👥 Active Contributors |\n"
+        f"| :---: | :---: | :---: |\n"
+        f"| {weeks_active} / {TOTAL_WEEKS} | {total_solution_files} | {active_contributors} |\n"
+    )
+
+    rank_medals = {1: "🥇", 2: "🥈", 3: "🥉"}
+
+    all_participants = set(solved.keys()) | set(file_counts.keys())
+
+    sorted_users = sorted(
+        all_participants,
+        key=lambda author: (len(solved.get(author, [])), file_counts.get(author, 0)),
+        reverse=True
+    )
+
+    table_content = "\n| Rank | Participant | Problems Solved | Total Solutions (Including Multi-language) |\n"
+    table_content += "| :---: | :---: | :---: | :---: |\n"
+
+    for rank, author in enumerate(sorted_users, 1):
+        rank_label = rank_medals.get(rank, f"`{rank}`")
+        problems = len(solved.get(author, []))
+        files = file_counts.get(author, 0)
+        
+        files_display = f"{files}"
+        
+        table_content += f"| {rank_label} | **{author}** | {problems} | {files_display} |\n"
 
     if not sorted_users:
-        table_content += "| - | No solutions merged yet | 0 | 🎯 |\n"
+        table_content += "| - | No solutions merged yet | 0 | 0 |\n"
 
     readme_path = "README.md"
     if not os.path.exists(readme_path):
@@ -90,17 +124,35 @@ def main():
     with open(readme_path, "r", encoding="utf-8") as f:
         content = f.read()
 
-    if "<!-- LEADERBOARD_START -->" not in content or "<!-- LEADERBOARD_END -->" not in content:
-        print("Leaderboard markers not found in README.md!")
+    if "<!-- STATS_START -->" in content and "<!-- STATS_END -->" in content:
+        stats_pattern = r"(<!-- STATS_START -->).*?(<!-- STATS_END -->)"
+        content = re.sub(
+            stats_pattern,
+            f"\\1\n{stats_content}\n\\2",
+            content,
+            flags=re.DOTALL,
+        )
+        print(f"Stats updated: {weeks_active}/{TOTAL_WEEKS} weeks | {total_solution_files} solutions | {active_contributors} contributors")
+    else:
+        print("Warning: STATS markers not found in README.md — skipping stats update.")
+
+    if "<!-- LEADERBOARD_START -->" in content and "<!-- LEADERBOARD_END -->" in content:
+        lb_pattern = r"(<!-- LEADERBOARD_START -->).*?(<!-- LEADERBOARD_END -->)"
+        content = re.sub(
+            lb_pattern,
+            f"\\1\n{table_content}\n\\2",
+            content,
+            flags=re.DOTALL,
+        )
+        print("Leaderboard table updated successfully.")
+    else:
+        print("Warning: LEADERBOARD markers not found in README.md — skipping leaderboard update.")
         return
 
-    pattern = r"(<!-- LEADERBOARD_START -->).*?(<!-- LEADERBOARD_END -->)"
-    replacement = f"\\1\n{table_content}\n\\2"
-    updated_content = re.sub(pattern, replacement, content, flags=re.DOTALL)
-
     with open(readme_path, "w", encoding="utf-8") as f:
-        f.write(updated_content)
-    print("Leaderboard successfully updated in README.md!")
+        f.write(content)
+
+    print("README.md written successfully!")
 
 
 if __name__ == "__main__":

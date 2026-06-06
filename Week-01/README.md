@@ -57,7 +57,10 @@
 
 ---
 
-### 📅 Day 6
+### 📅 Day 6 ⚡ TODAY (**We Are Here!!**)
+👇 **This is today's challenge — let's go! 🚀**
+
+
 | # | Problem | Difficulty | LeetCode | NeetCode |
 |---|---------|------------|----------|----------|
 | 10 | Daily Temperatures | 🟡 Medium | [Link](https://leetcode.com/problems/daily-temperatures/) | [Video](https://www.youtube.com/watch?v=cTBiBSnjO3c) |
@@ -76,9 +79,3 @@
 > *Will be pinned after the practice session!*
 
 ---
-
-## 💬 Discussion Prompts
-
-- When do you use a `stack` vs a `deque`?
-- How does monotonic stack help in Daily Temperatures?
-- What is the time complexity of `priority_queue` push/pop?

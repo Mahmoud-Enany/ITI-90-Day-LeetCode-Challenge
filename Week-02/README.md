@@ -25,6 +25,7 @@
 ---
 
 ### 📅 Day 2
+
 | # | Problem | Difficulty | LeetCode | NeetCode |
 |---|---------|------------|----------|----------|
 | 03 | [Subarray Sum Equals K](./03-Subarray Sum Equals K/) | 🟡 Medium | [Link](https://leetcode.com/problems/subarray-sum-equals-k/) | [Video](https://www.youtube.com/watch?v=fFVZt-6sgy8) |
@@ -74,8 +75,3 @@
 > *Will be pinned after the practice session!*
 
 ---
-
-## 💬 Discussion Prompts
-
-- `map` vs `unordered_map` — trade-offs?
-- How does prefix sum + hash map solve Subarray Sum Equals K?
